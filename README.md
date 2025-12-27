@@ -18,7 +18,7 @@ python -m venv .venv
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
-. .\venv\Scripts\Activate.ps1
+.venv\Scripts\activate
 ```
 
 Notes:
