@@ -1,99 +1,105 @@
-````markdown
-# UI_Automate_Using_Playwright_Python_BDD
+# 🎭 UI Automation Using Playwright + Python (BDD)
 
-This repository contains Playwright-based UI automation using Python and BDD-style tests.
+This repository contains UI automation tests built using **Playwright with Python**, following **BDD (Behavior Driven Development)** principles for clean and readable test cases.
 
-Windows (PowerShell) — Step by step
+---
 
-1. Open PowerShell in the project root (this repo folder).
+## 📋 Prerequisites
 
-2. Create a virtual environment named `.venv` (recommended):
+Ensure you have the following installed on your system:
 
-```powershell
+- **Python 3.9** or higher 🐍
+- **Git** 🛠️
+- **Visual Studio Code (VS Code)** 💻
+
+---
+
+## ⚙️ Setup & Installation (Windows)
+
+Follow these steps inside your **VS Code Terminal** (`Ctrl + \``) to set up the project environment.
+
+### 1. Create Virtual Environment
+
+```bash
 python -m venv .venv
 ```
-```
 
-3. Activate the virtual environment (dot-source the PowerShell script):
+### 2. Activate Virtual Environment
 
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+Choose the command based on your terminal:
+
+### PowerShell:
+
+```bash
 .venv\Scripts\activate
 ```
 
-Notes:
+### Command Prompt: 
+```bash
+.venv\Scripts\activate.bat
+```
+### Git Bash: source 
+```bash
+.venv/Scripts/activate
+```
 
-- `Set-ExecutionPolicy` above only changes policy for the current PowerShell process.
-- If you prefer the repo-local name used previously, replace `.venv` with `venv` in the commands.
+Note: If PowerShell blocks execution, run:
+```bash
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass -Force
+```
+### 3. Verify Python & Pip
 
-4. Confirm Python and pip are from the venv:
-
-```powershell
+```bash
 python --version
 pip --version
 ```
+### 4. Install Dependencies
 
-5. Install project dependencies. If a `requirements.txt` exists:
-
-```powershell
+```bash
+# If requirements.txt exists:
 pip install -r requirements.txt
-```
 
-If there is no `requirements.txt` yet, install needed packages and then freeze:
-
-```powershell
-pip install pytest-playwright playwright
+# If setting up for the first time:
+pip install pytest playwright pytest-playwright behave
 pip freeze > requirements.txt
 ```
-
-6. Install Playwright browsers and optional dependencies:
-
-```powershell
+### 5. Install Playwright Browsers
+```bash
 python -m playwright install
-python -m playwright install-deps    # optional for Linux; harmless on Windows
 ```
+# 🧪 Running Tests
+You can run your tests using Pytest or Behave.
 
-7. Running tests (examples — use whichever applies to your project):
+### ➤ Using Pytest
+```bash
+# Run all tests
+pytest
 
-- pytest-based tests:
-
-```powershell
+# Run in quiet mode
 pytest -q
 ```
 
-- behave (BDD) tests:
-
-```powershell
+### ➤ Using Behave (BDD)
+```bash
+# Run all features
 behave
+
+# Run a specific feature file
+behave features/login.feature
 ```
+# 📂 Project Structure
 
-8. Deactivate the venv when finished:
+├── features/
+│   ├── steps/           # Python step definitions
+│   └── login.feature    # Gherkin feature files
+├── .venv/               # Virtual environment folder
+├── requirements.txt     # Dependencies list
+└── README.md            # Documentation
 
-```powershell
-deactivate
-```
 
-Troubleshooting
+# 🛑 Close Environment
+  When you're done, simply run:
 
-- If activation fails because `Activate.ps1` is missing or locked, create a fresh venv:
-
-```powershell
-python -m venv .venv
-```
-
-- If files are locked by OneDrive or permission errors occur, try closing any processes using the folder, pause OneDrive syncing for the project folder, or create the venv in a non-synced local path.
-
-- To temporarily run venv activation from cmd.exe instead of PowerShell:
-
-```cmd
-.venv\Scripts\activate.bat
-```
-
-Additional notes
-
-- Keep `requirements.txt` up to date with `pip freeze > requirements.txt` after installing or upgrading packages.
-- If you want me to add a `requirements.txt` or update CI/automation scripts, tell me what packages you need or I can export the current environment.
-
-```
-
-```
+  ```bash
+  deactivate
+  ```
