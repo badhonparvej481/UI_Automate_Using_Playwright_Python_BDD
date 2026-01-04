@@ -12,7 +12,7 @@ Windows (PowerShell) — Step by step
 ```powershell
 python -m venv .venv
 ```
-````
+```
 
 3. Activate the virtual environment (dot-source the PowerShell script):
 
