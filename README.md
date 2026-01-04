@@ -87,15 +87,6 @@ behave
 # Run a specific feature file
 behave features/login.feature
 ```
-# 📂 Project Structure
-
-├── features/
-│   ├── steps/           # Python step definitions
-│   └── login.feature    # Gherkin feature files
-├── .venv/               # Virtual environment folder
-├── requirements.txt     # Dependencies list
-└── README.md            # Documentation
-
 
 # 🛑 Close Environment
   When you're done, simply run:
